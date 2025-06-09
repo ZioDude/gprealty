@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 15% 98%;
+    --foreground: 180 10% 20%;
+
+    --card: 180 15% 96%;
+    --card-foreground: 180 10% 20%;
+ 
+    --popover: 180 15% 96%;
+    --popover-foreground: 180 10% 20%;
+ 
+    --primary: 175 70% 38%;
+    --primary-foreground: 180 100% 98%;
+ 
+    --secondary: 170 40% 92%;
+    --secondary-foreground: 175 40% 25%;
+ 
+    --muted: 170 30% 94%;
+    --muted-foreground: 170 25% 45%;
+ 
+    --accent: 150 60% 45%;
+    --accent-foreground: 150 100% 98%;
+ 
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 100% 98%;
+
+    --border: 180 15% 88%;
+    --input: 180 15% 88%;
+    --ring: 175 70% 45%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 175 15% 12%;
+    --foreground: 180 10% 90%;
+ 
+    --card: 175 15% 15%;
+    --card-foreground: 180 10% 90%;
+ 
+    --popover: 175 15% 15%;
+    --popover-foreground: 180 10% 90%;
+ 
+    --primary: 175 65% 55%;
+    --primary-foreground: 175 100% 10%;
+ 
+    --secondary: 170 25% 22%;
+    --secondary-foreground: 170 30% 85%;
+ 
+    --muted: 170 20% 20%;
+    --muted-foreground: 170 20% 60%;
+ 
+    --accent: 150 55% 65%;
+    --accent-foreground: 150 100% 10%;
+ 
+    --destructive: 0 70% 65%;
+    --destructive-foreground: 0 100% 98%;
+ 
+    --border: 170 15% 25%;
+    --input: 170 15% 25%;
+    --ring: 175 65% 60%;
+  }
+}
+ 
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .animate-slide-in-left {
+    animation: slideInFromLeft 0.3s ease-out forwards;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  
+  .animate-pulse-gentle {
+    animation: pulseGentle 2s ease-in-out infinite;
+  }
+  
+  .animate-shimmer-slide {
+    animation: shimmerSlide 2s linear infinite;
+  }
+  
+  .animate-spin-around {
+    animation: spinAround calc(var(--speed) * 2) linear infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .nav-link-modern {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .nav-link-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .nav-link-modern:hover::before {
+    left: 100%;
+  }
+  
+  .ripple-button {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .ripple-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  .ripple-button:active::before {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGentle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes shimmerSlide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes spinAround {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
+  }
+}
+
+/* Enhanced mobile menu animations */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--accent)));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(var(--primary) / 0.8), hsl(var(--accent) / 0.8));
+}
