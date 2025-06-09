@@ -1,5 +1,5 @@
-import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Heart, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { Input } from './ui/input'; // Assuming Input component is used for newsletter
 import { Button } from './ui/button'; // Assuming Button component is used for newsletter
 

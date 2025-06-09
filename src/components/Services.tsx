@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Home, Users, Building2, Heart, Star, ArrowRight, CheckCircle, TrendingUp } from 'lucide-react';
+import { Home, Search, Shield, HeadphonesIcon, CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { cn } from '../lib/utils';
 
@@ -17,7 +17,7 @@ const services = [
     delay: 0
   },
   {
-    icon: Users,
+    icon: Search,
     title: "Roommate Matching",
     description: "Connect with other students looking for shared accommodation and find your ideal roommate match.",
     gradient: "from-purple-500 to-pink-600",
@@ -25,7 +25,7 @@ const services = [
     delay: 0.1
   },
   {
-    icon: Building2,
+    icon: Shield,
     title: "Property Management",
     description: "We work with trusted property owners to ensure safe, well-maintained, and student-friendly accommodations.",
     gradient: "from-green-500 to-blue-600",
@@ -33,7 +33,7 @@ const services = [
     delay: 0.2
   },
   {
-    icon: Heart,
+    icon: HeadphonesIcon,
     title: "Student Support",
     description: "Get assistance with contracts, utilities setup, and any housing-related issues throughout your stay.",
     gradient: "from-pink-500 to-red-600",
@@ -44,7 +44,7 @@ const services = [
 
 const stats = [
   {
-    icon: Users,
+    icon: Search,
     number: "1000+",
     label: "Happy Students",
     description: "Students found their perfect home",
@@ -52,7 +52,7 @@ const stats = [
     delay: 0
   },
   {
-    icon: Building2,
+    icon: Shield,
     number: "500+",
     label: "Properties Listed",
     description: "Premium accommodations available",
@@ -60,7 +60,7 @@ const stats = [
     delay: 0.1
   },
   {
-    icon: Star,
+    icon: HeadphonesIcon,
     number: "98%",
     label: "Satisfaction Rate",
     description: "Students recommend our services",

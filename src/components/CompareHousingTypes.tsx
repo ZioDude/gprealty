@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Home, Users, Building, Heart, Check, X, Euro, Clock, Wifi, Car } from 'lucide-react';
+import { Home, Users, Building, Heart, Check, X, Euro } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 const housingTypes = [
@@ -112,7 +112,6 @@ const housingTypes = [
 const CompareHousingTypes: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedType, setSelectedType] = useState<string>('shared');
-  const [comparisonMode, setComparisonMode] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -328,7 +327,7 @@ const CompareHousingTypes: React.FC = () => {
                 </tr>
               </thead>
               <tbody>
-                {housingTypes.map((type, index) => (
+                {housingTypes.map((type) => (
                   <tr key={type.id} className="border-b border-gray-100 hover:bg-gray-50/50">
                     <td className="py-4 px-4">
                       <div className="flex items-center gap-3">
