@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { Users, MessageSquare, CheckCircle } from 'lucide-react';
-import { cn } from '../lib/utils';
 
 interface RoommateMatchingProps {
   setIsRoommateFormOpen: React.Dispatch<React.SetStateAction<boolean>>;

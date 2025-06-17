@@ -5,7 +5,6 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from './ui/select';
 import { User, Mail, Phone, School, MessageSquare, CheckCircle, X, Users as GenderIcon, Instagram } from 'lucide-react'; // Added Instagram
-import { cn } from '../lib/utils';
 
 interface RoommateFormData {
   fullName: string;
