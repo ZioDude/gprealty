@@ -2,18 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
 import { cn } from '../lib/utils';
+import { Users } from 'lucide-react'; // Import Users icon
 
 interface HeaderProps {
   setIsStudentFormOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsRoommateFormOpen: React.Dispatch<React.SetStateAction<boolean>>; // Add prop for roommate form
 }
 
 const navItems = [
-  { href: "/services", label: "Services" },
+  { href: "#services", label: "Services" },
   { href: "#university-partners", label: "Universities" },
   { href: "#testimonials", label: "Reviews" },
 ];
 
-const Header: React.FC<HeaderProps> = ({ setIsStudentFormOpen }) => {
+const Header: React.FC<HeaderProps> = ({ setIsStudentFormOpen, setIsRoommateFormOpen }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -121,6 +123,15 @@ const Header: React.FC<HeaderProps> = ({ setIsStudentFormOpen }) => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                     Find Housing
+                  </span>
+                </Button>
+                <Button 
+                  onClick={() => setIsRoommateFormOpen(true)}
+                  className="ml-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 border-0"
+                >
+                  <span className="flex items-center gap-2">
+                    <Users className="w-4 h-4" />
+                    Find Roommate
                   </span>
                 </Button>
               </div>
@@ -236,6 +247,18 @@ const Header: React.FC<HeaderProps> = ({ setIsStudentFormOpen }) => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                   Find Your Perfect Housing
+                </span>
+              </Button>
+              <Button 
+                onClick={() => {
+                  setIsRoommateFormOpen(true);
+                  setIsMobileMenuOpen(false);
+                }}
+                className="w-full mt-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-xl border-0"
+              >
+                <span className="flex items-center justify-center gap-2">
+                  <Users className="w-5 h-5" />
+                  Find Roommate
                 </span>
               </Button>
             </div>
